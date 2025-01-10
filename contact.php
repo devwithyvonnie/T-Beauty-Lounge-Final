@@ -1,6 +1,6 @@
 <?php 
 $errors = '';
-$myemail = 'yourname@website.com';//<-----Put Your email address here.
+$myemail = 'yourcompany@email.com';//<-----Put Your email address here.
 
 if(empty($_POST['name'])  || 
    empty($_POST['email']) || 
@@ -40,9 +40,9 @@ if( empty($errors)) {
 
 	mail($to,$email_subject,$email_body,$headers);
 
-	//redirect to the 'thank you' page
+	//redirect to the 'contact' page
 
-	header('Location: thankyou.html');
+	header('Location: thank-you.html');
 
 }
 ?>

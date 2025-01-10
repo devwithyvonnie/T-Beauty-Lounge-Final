@@ -2,48 +2,18 @@
 
   "use strict";
 
-  window.addEventListener("load", (event) => {
-    //isotope
-    $('.isotope-container').isotope({
-      // options
-      itemSelector: '.item',
-      layoutMode: 'masonry'
+
+  var initSearch = function () {
+    $(".user-items .search-item").click(function () {
+      $(".search-box").toggleClass('active');
+      $(".search-box .search-input").focus();
+    });
+    $(".close-button").click(function () {
+      $(".search-box").toggleClass('active');
     });
 
-    var $grid = $('.entry-container').isotope({
-      itemSelector: '.entry-item',
-      layoutMode: 'masonry'
-    });
+  };
 
-
-    // Initialize Isotope
-    var $container = $('.isotope-container').isotope({
-      // options
-      itemSelector: '.item',
-      layoutMode: 'masonry'
-    });
-
-    $(document).ready(function () {
-      //active button
-      $('.filter-button').click(function () {
-        $('.filter-button').removeClass('active');
-        $(this).addClass('active');
-      });
-    });
-
-    // Filter items on button click
-    $('.filter-button').click(function () {
-      var filterValue = $(this).attr('data-filter');
-      if (filterValue === '*') {
-        // Show all items
-        $container.isotope({ filter: '*' });
-      } else {
-        // Show filtered items
-        $container.isotope({ filter: filterValue });
-      }
-    });
-
-  });
 
   // init Chocolat light box
   var initChocolat = function () {
@@ -51,15 +21,6 @@
       imageSize: 'contain',
       loop: true,
     })
-  }
-
-  // init jarallax parallax
-  var initJarallax = function () {
-    jarallax(document.querySelectorAll(".jarallax"));
-
-    jarallax(document.querySelectorAll(".jarallax-keep-img"), {
-      keepImg: true,
-    });
   }
 
   var initProductQty = function () {
@@ -87,17 +48,7 @@
 
   }
 
-
-  $(document).ready(function () {
-
-    var swiper = new Swiper(".slider", {
-      effect: "fade",
-      navigation: {
-        nextEl: ".main-slider-button-next",
-        prevEl: ".main-slider-button-prev",
-      },
-    });
-
+  var initSlider = function () {
 
     // product single page
     var thumb_slider = new Swiper(".product-thumbnail-slider", {
@@ -105,7 +56,7 @@
       slidesPerView: 3,
       autoplay: true,
       direction: "vertical",
-      spaceBetween: 30,
+      spaceBetween: 10,
     });
 
     var large_slider = new Swiper(".product-large-slider", {
@@ -115,6 +66,14 @@
       effect: 'fade',
       thumbs: {
         swiper: thumb_slider,
+      },
+    });
+
+    var swiper = new Swiper(".review-swiper", {
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
       },
     });
 
@@ -141,33 +100,30 @@
       },
     });
 
-    var swiper = new Swiper(".testimonial-swiper", {
+    var swiper = new Swiper(".swiper-slideshow", {
       slidesPerView: 1,
-      spaceBetween: 20,
+      spaceBetween: 0,
+      speed: 700,
+      loop: true,
+      navigation: {
+        nextEl: '.swiper-slideshow .swiper-right',
+        prevEl: '.swiper-slideshow .swiper-left',
+      },
       pagination: {
         el: ".swiper-pagination",
         clickable: true,
       },
     });
 
-    // Animate on Scroll
-    AOS.init({
-      duration: 1000,
-      once: true,
-    })
+  };
 
-    $(".youtube").colorbox({
-      iframe: true,
-      innerWidth: 960,
-      innerHeight: 585
-    });
-
+  // document ready
+  $(document).ready(function () {
+    initSearch();
+    initSlider();
     initChocolat();
-    initJarallax();
     initProductQty();
 
-
-
-  }); // End of a document
+  }); // document ready
 
 })(jQuery);
