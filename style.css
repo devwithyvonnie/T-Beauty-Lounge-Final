@@ -25,7 +25,7 @@ CSS STRUCTURE:
 body {
   --heading-font: "Inter", sans-serif;
   --heading-font-weight: 600;
-  --heading-color: #1D150A;
+  --heading-color: #1a4568;
   --heading-line-height: 1.24;
 
   --swiper-theme-color: #8C907E;
@@ -35,12 +35,12 @@ body {
   --bs-body-font-size: 16px;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.7;
-  --bs-body-color: #555555;
+  --bs-body-color: #5f84a1;
   --bs-body-color-rgb: 1.6, 1.6, 1.6;
   --bs-body-bg-rgb: 249, 245, 243;
   --bs-body-bg: #F6F2EF;
 
-  --bs-primary: #9c9259;
+  --bs-primary: #1a4568;
   --bs-secondary: #EAE3DF;
   --bs-black: #111;
   --bs-white: #fff;
@@ -49,8 +49,8 @@ body {
   --bs-gray: #9aa1a7;
   --bs-gray-dark: #6B6765;
 
-  --bs-primary-rgb: 156, 146, 89;
-  --bs-secondary-rgb: 234, 227, 223;
+  --bs-primary-rgb: 29, 69, 104;
+  --bs-secondary-rgb: 95, 132, 161;
   --bs-black-rgb: 17, 17, 17;
   --bs-light-rgb: 241, 241, 240;
   --bs-dark-rgb: 29, 21, 10;
@@ -545,7 +545,6 @@ input:focus {
 .social-links li:hover {
   background-color: var(--bs-light);
 }
-
 
 /*--------------------------------------------------------------
 Blog page style start
